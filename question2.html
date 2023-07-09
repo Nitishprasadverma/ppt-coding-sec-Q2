@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Text to Webpage</title>
+  <style>
+    #inputBox {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="inputBox">
+  <button id="submitButton">Submit</button>
+  <div id="output"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var inputBox = document.getElementById("inputBox");
+      var submitButton = document.getElementById("submitButton");
+      var output = document.getElementById("output");
+
+      submitButton.addEventListener("click", function() {
+        var userInput = inputBox.value;
+
+        if (userInput !== "") {
+          var newParagraph = document.createElement("p");
+          newParagraph.textContent = userInput;
+          output.appendChild(newParagraph);
+          inputBox.value = "";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
